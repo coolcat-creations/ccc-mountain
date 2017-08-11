@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.7" type="template" client="site">
+	<name>ccc-mountain</name>
+	<creationDate>09-06-2017</creationDate>
+	<author>Elisa Foltyn</author>
+	<authorEmail>book@coolcat-creations.com</authorEmail>
+	<authorUrl>http://www.coolcat-creations.com</authorUrl>
+	<copyright>Copyright 2013-2016 Blackrock Digital LLC</copyright>
+	<license>based on https://github.com/BlackrockDigital/startbootstrap-landing-page - Code released under the [MIT]
+		(https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE) license.
+	</license>
+	<version>1.0</version>
+	<description>TPL_CCC_MOUNTAIN_DESC</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>error.php</filename>
+		<filename>offline.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>favicon.ico</filename>
+		<filename>LICENSE</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+		<folder>fonts</folder>
+	</files>
+
+	<positions>
+		<position>mainmenu</position>
+		<position>header</position>
+		<position>breadcrumbs</position>
+		<position>banner</position>
+		<position>footermenu</position>
+		<position>copyright</position>
+	</positions>
+
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+
+				<field name="mainoutput" type="radio" default="yes"
+				       label="TPL_CCC-MOUNTAIN_FIELD_MAINOUTPUT"
+				       description="TPL_CCC-MOUNTAIN_FIELD_MAINOUTPUT_DESC">
+					<option value="yes">JSHOW</option>
+					<option value="no">JHIDE</option>
+				</field>
+
+				<field name="logoType" type="list" default="0" label="TPL_CCC-MOUNTAIN_FIELD_LOGOTYPE"
+				       description="TPL_CCC-MOUNTAIN_FIELD_LOGOTYPE_DESC" filter="word">
+					<option value="text">TPL_CCC-MOUNTAIN_FIELD_LOGOTYPE_TEXT</option>
+					<option value="image">TPL_CCC-MOUNTAIN_FIELD_LOGOTYPE_IMG</option>
+				</field>
+
+				<field name="logoText" type="text" default=""
+				       label="TPL_CCC-MOUNTAIN_FIELD_LOGOTEXT" description="TPL_CCC-MOUNTAIN_FIELD_LOGOTEXT_DESC"
+				       showon="logoType:text" />
+
+				<field name="logoImage" type="media" default="templates/ccc-mountain/images/logo.jpg"
+				       label="TPL_CCC-MOUNTAIN_FIELD_LOGOIMG" description="TPL_CCC-MOUNTAIN_FIELD_LOGOIMG_DESC"
+				       showon="logoType:image" />
+
+				<field name="javascript"
+				       type="textarea"
+				       label="TPL_CCC-MOUNTAIN_FIELD_JAVASCRIPT"
+				       description="TPL_CCC-MOUNTAIN_FIELD_JAVASCRIPT_DESC"
+				       cols="50"
+				       rows="15"
+				/>
+
+
+			</fieldset>
+		</fields>
+	</config>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_ccc-mountain.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_ccc-mountain.sys.ini</language>
+		<language tag="de-DE">de-DE/de-DE.tpl_ccc-mountain.ini</language>
+		<language tag="de-DE">de-DE/de-DE.tpl_ccc-mountain.sys.ini</language>
+	</languages>
+
+</extension>
