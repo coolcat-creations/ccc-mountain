@@ -82,7 +82,6 @@ echo ($this->direction === 'rtl' ? ' rtl' : '');
 
 		<?php endif; ?>
 
-		<div class="container">
 
 			<?php if ($logo) : ?>
 				<a class="navbar-brand" href="<?php echo $this->baseurl; ?>">
@@ -99,7 +98,6 @@ echo ($this->direction === 'rtl' ? ' rtl' : '');
 
 			<?php endif; ?>
 
-		</div>
 
 	</nav>
 
