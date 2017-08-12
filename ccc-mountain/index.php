@@ -25,7 +25,7 @@ $tplpath = JUri::root() . 'templates/' . $this->template;
 
 JFactory::getDocument()->resetHeadData('scripts');
 
-$this->addStyleSheet('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
+$this->addStyleSheet('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css', array('integrity'=>'', 'crossorigin' => 'anonymous' ));
 $this->addStyleSheet($tplpath . '/css/landing-page.css');
 
 $this->addStyleSheet($tplpath . '/css/font-awesome/font-awesome.min.css');
@@ -70,7 +70,7 @@ echo ($this->direction === 'rtl' ? ' rtl' : '');
 
 <?php if ($logo || $this->countModules('mainmenu')) : ?>
 
-	<nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
 
 		<?php if ($this->countModules('mainmenu')) : ?>
 
