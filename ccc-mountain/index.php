@@ -13,7 +13,6 @@ $params = $app->getTemplate(true)->params;
 
 $javascript = $this->params->get('javascript');
 
-
 $option   = $app->input->getCmd('option', '');
 $view     = $app->input->getCmd('view', '');
 $layout   = $app->input->getCmd('layout', '');
@@ -24,9 +23,7 @@ $year     = JFactory::getDate()->format('Y');
 
 $tplpath = JUri::root() . 'templates/' . $this->template;
 
-JHtml::_('jquery.framework');
-
-unset($this->_scripts[$this->baseurl . '/media/jui/js/bootstrap.min.js']);
+JFactory::getDocument()->resetHeadData('scripts');
 
 $this->addStyleSheet('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
 $this->addStyleSheet($tplpath . '/css/landing-page.css');
@@ -34,8 +31,10 @@ $this->addStyleSheet($tplpath . '/css/landing-page.css');
 $this->addStyleSheet($tplpath . '/css/font-awesome/font-awesome.min.css');
 $this->addStyleSheet('https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic');
 
-$this->addScript('https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js');
-$this->addScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js');
+$this->addScript('https://code.jquery.com/jquery-3.2.1.slim.min.js', array('integrity'=>'sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', 'crossorigin' => 'anonymous' ));
+$this->addScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', array('integrity'=>'sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1', 'crossorigin' => 'anonymous' ));
+$this->addScript('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js', array('integrity'=>'sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1', 'crossorigin' => 'anonymous' ));
+
 $this->addScript($tplpath . '/js/custom.js');
 
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1, shrink-to-fit=no');
