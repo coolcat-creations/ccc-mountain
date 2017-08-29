@@ -23,7 +23,7 @@ $itemid   = $app->input->getCmd('Itemid');
 $sitename = $app->get('sitename');
 $year     = JFactory::getDate()->format('Y');
 
-$tplpath = JUri::root() . 'templates/' . $this->template;
+$tplpath = $this->baseurl . 'templates/' . $this->template;
 
 /*$this->addStyleSheet('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css', array('integrity'=>'', 'crossorigin' => 'anonymous' ));*/
 $this->addStyleSheet($tplpath . '/css/template.css');
@@ -136,7 +136,7 @@ echo ($this->direction === 'rtl' ? ' rtl' : '');
 
 <jdoc:include type="modules" name="banner" style="banner"/>
 
-<footer class="mt-0">
+<footer>
     <div class="container">
 
 		<?php if ($this->countModules('footermenu')) : ?>
