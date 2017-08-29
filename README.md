@@ -80,6 +80,9 @@ https://github.com/coolcat-creations/cccyoutubefield
 ## Recommendations
 Before I put the site online I used the coming soon plugin from Brian Teeman available at: https://github.com/brianteeman/haraka This plugin shows a nice "coming soon" page with countdown if you want to, and makes the page accessible through a secret word parameter instead of login data. That makes it easy to show your site to others before launch.
 
+## Browser detect plugin
+Thank you @zero-24 for the plugin that detects the users environment and redirects to the right page: https://github.com/zero-24/plg_system_environmentdetect
+
 ## ToDos
 • Review and add Accessibility Options
 • More Overrides for Joomla! Core
@@ -89,7 +92,10 @@ Before I put the site online I used the coming soon plugin from Brian Teeman ava
 This template is not tested thoroughly so if you find any issues:
 Suggestions and help are welcome!
 
-Special Thanks to @brianteeman and @bembelimen  :-)
+Special Thanks to 
+Brian Teeman @brianteeman 
+Benjamin Trenkle @bembelimen 
+Tobias Zulauf @zero-24
 
 
 
