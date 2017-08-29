@@ -7,7 +7,7 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-$app = JFactory::getApplication();
+$app      = JFactory::getApplication();
 $document = JFactory::getDocument();
 $this->setHtml5(true);
 
@@ -25,19 +25,18 @@ $year     = JFactory::getDate()->format('Y');
 
 $tplpath = $this->baseurl . 'templates/' . $this->template;
 
-/*$this->addStyleSheet('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css', array('integrity'=>'', 'crossorigin' => 'anonymous' ));*/
 $this->addStyleSheet($tplpath . '/css/template.css');
 
 $this->addStyleSheet($tplpath . '/css/font-awesome/font-awesome.min.css');
 $this->addStyleSheet('https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic');
 
 JHtml::_('jquery.framework');
-$this->addScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', '', array('integrity'=>'', 'crossorigin' => 'anonymous', 'defer'=>'defer' ));
-$this->addScript($tplpath . '/js/bootstrap.min.js', '', array('defer'=>'defer' ));
-$this->addScript($tplpath . '/js/custom.js', '', array('defer'=>'defer' ));
-unset($this->_scripts[$this->baseurl.'/media/jui/js/jquery-migrate.min.js']);
+$this->addScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', '', array('integrity' => '', 'crossorigin' => 'anonymous', 'defer' => 'defer'));
+$this->addScript($tplpath . '/js/bootstrap.min.js', '', array('defer' => 'defer'));
+$this->addScript($tplpath . '/js/custom.js', '', array('defer' => 'defer'));
+unset($this->_scripts[$this->baseurl . '/media/jui/js/jquery-migrate.min.js']);
 
-$customtag= '<meta http-equiv="X-UA-Compatible" content="IE=edge" />' . "\n";
+$customtag = '<meta http-equiv="X-UA-Compatible" content="IE=edge" />' . "\n";
 
 $document->addCustomTag($customtag);
 
@@ -69,7 +68,7 @@ else
 	. ($task ? ' task-' . $task : ' no-task')
 	. ($itemid ? ' itemid-' . $itemid : '')
 	. ($params->get('fluidContainer') ? ' fluid' : '');
-echo ($this->direction === 'rtl' ? ' rtl' : '');
+echo($this->direction === 'rtl' ? ' rtl' : '');
 ?>">
 
 <?php if ($logo || $this->countModules('mainmenu')) : ?>
@@ -117,7 +116,8 @@ echo ($this->direction === 'rtl' ? ' rtl' : '');
 
 
 <?php if ($this->params->get('mainoutput', 'yes') == 'yes') : ?>
-    <main id="maincontent" class="<?php if ((!$this->countModules('header') && (!$this->countModules('breadcrumbs')))): ?>pt-5<?php endif; ?>">
+    <main id="maincontent"
+          class="<?php if ((!$this->countModules('header') && (!$this->countModules('breadcrumbs')))): ?>pt-5<?php endif; ?>">
         <div class="container">
             <div class="row">
                 <div class="col-<?php echo $this->countModules('right') ? 8 : 12; ?>">
