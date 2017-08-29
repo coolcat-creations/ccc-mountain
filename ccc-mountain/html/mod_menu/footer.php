@@ -37,7 +37,7 @@ if ($tagId = $params->get('tag_id', ''))
 		{
 			$class .= ' active';
 		}
-		elseif ($item->type === 'alias')
+        elseif ($item->type === 'alias')
 		{
 			$aliasToId = $item->params->get('aliasoptions');
 
@@ -45,7 +45,7 @@ if ($tagId = $params->get('tag_id', ''))
 			{
 				$class .= ' active';
 			}
-			elseif (in_array($aliasToId, $path))
+            elseif (in_array($aliasToId, $path))
 			{
 				$class .= ' alias-parent-active';
 			}
@@ -87,7 +87,7 @@ if ($tagId = $params->get('tag_id', ''))
 			echo '<ul class="dropdown-menu">';
 		}
 		// The next item is shallower.
-		elseif ($item->shallower)
+        elseif ($item->shallower)
 		{
 			echo '</li>';
 			echo str_repeat('</ul></li>', $item->level_diff);
@@ -95,8 +95,7 @@ if ($tagId = $params->get('tag_id', ''))
 		// The next item is on the same level.
 		else
 		{
-			echo '</li>
-         <li class="footer-menu-divider list-inline-item">&sdot;</li>';
+			echo '</li>';
 		}
 	}
 	?></ul>

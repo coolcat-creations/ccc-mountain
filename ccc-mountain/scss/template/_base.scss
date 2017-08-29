@@ -1,0 +1,116 @@
+/* navbar show dropdown on hover */
+.navbar-nav li:hover .dropdown-menu {
+  display: block;
+  left: inherit;
+  margin-top: 0;
+  background: rgba(247, 247, 247, 0.8);
+  border: none;
+  border-radius: 0;
+}
+
+.navbar-toggler {
+  z-index: 1;
+}
+
+/* setting background for header modules */
+
+.intro-header {
+  color: $gray-100;
+  background-size: cover;
+}
+
+.site-header {
+  color: $gray-100;
+  background-size: cover;
+}
+
+/* setting background for breadcrumbs */
+
+.breadcrumbs {
+  background-color: $gray-200;
+}
+
+
+/* Pagination Styling in Blog Views */
+
+li.active .page-link {
+  background-color: $blue;
+  color: $white;
+  font-weight: 700;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  margin: 3px;
+  padding: 0;
+  line-height: 1.6rem;
+  color: $blue;
+  background-color: $white;
+  border: 1px solid $gray-400;
+  border-radius: 50%;
+  height: 1.75rem;
+  width: 1.75rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+/* styling hr in banners */
+
+.intro-divider {
+  width: 400px;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* setup footer background */
+
+footer {
+  background-color: $gray-200;
+
+  li.list-inline-item {
+    &:after {
+      content:"•";
+      margin:0 5px;
+      color: $blue;
+    }
+    &:last-of-type:after {
+      content:"";
+    }
+  }
+}
+
+.navbar-light .navbar-nav .nav-link.btn-primary {
+  color:#fff;
+}
+
+/* Styling for the Banners */
+
+.banner {
+
+  color: $gray-100;
+  background: $lightblue;
+  background-size: cover;
+
+  h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 3em;
+  }
+
+  ul {
+    margin-bottom: 20px;
+  }
+
+  .banner-social-buttons {
+    float: right;
+    margin-top: 0;
+  }
+
+}
+
+.banner.dark {
+  background: theme-color("secondary");
+  color: $white;
+}

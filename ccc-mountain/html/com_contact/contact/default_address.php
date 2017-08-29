@@ -24,36 +24,36 @@ defined('_JEXEC') or die;
 
 
 <?php if ($this->contact->address && $this->params->get('show_street_address')) : ?>
-	<span class="contact-street" itemprop="streetAddress">
+    <span class="contact-street" itemprop="streetAddress">
 					<?php echo nl2br($this->contact->address); ?>
-		<br/>
+        <br/>
 				</span>
 <?php endif; ?>
 
 <?php if ($this->contact->postcode && $this->params->get('show_postcode')) : ?>
-	<span class="contact-postcode" itemprop="postalCode">
+    <span class="contact-postcode" itemprop="postalCode">
 					<?php echo $this->contact->postcode; ?>
 				</span>
 <?php endif; ?>
 
 <?php if ($this->contact->suburb && $this->params->get('show_suburb')) : ?>
-	<span class="contact-suburb" itemprop="addressLocality">
+    <span class="contact-suburb" itemprop="addressLocality">
 					<?php echo $this->contact->suburb; ?>
-		<br/>
+        <br/>
 				</span>
 <?php endif; ?>
 
 <?php if ($this->contact->state && $this->params->get('show_state')) : ?>
-	<span class="contact-state" itemprop="addressRegion">
+    <span class="contact-state" itemprop="addressRegion">
 					<?php echo $this->contact->state; ?>
-		<br/>
+        <br/>
 				</span>
 <?php endif; ?>
 
 <?php if ($this->contact->country && $this->params->get('show_country')) : ?>
-	<span class="contact-country" itemprop="addressCountry">
+    <span class="contact-country" itemprop="addressCountry">
 				<?php echo $this->contact->country; ?>
-		<br/>
+        <br/>
 			</span>
 <?php endif; ?>
 
@@ -61,10 +61,10 @@ defined('_JEXEC') or die;
 <?php if ($this->contact->email_to && $this->params->get('show_email')) : ?>
 
 
-	<span class="fa fa-envelope"></span>
+    <span class="fa fa-envelope"></span>
 
 
-	<span class="contact-emailto" itemprop="email">
+    <span class="contact-emailto" itemprop="email">
 			<?php echo $this->contact->email_to; ?>
 		</span>
 
@@ -72,32 +72,32 @@ defined('_JEXEC') or die;
 
 <?php if ($this->contact->telephone && $this->params->get('show_telephone')) : ?>
 
-	<span class="fa fa-phone"></span>
+    <span class="fa fa-phone"></span>
 
-	<span class="contact-telephone" itemprop="telephone">
+    <span class="contact-telephone" itemprop="telephone">
 			<?php echo $this->contact->telephone; ?>
 		</span>
 
 <?php endif; ?>
 <?php if ($this->contact->fax && $this->params->get('show_fax')) : ?>
-	<span class="fa fa-print"></span>
+    <span class="fa fa-print"></span>
 
-	<span class="contact-fax" itemprop="faxNumber">
+    <span class="contact-fax" itemprop="faxNumber">
 		<?php echo $this->contact->fax; ?>
 		</span>
 
 <?php endif; ?>
 <?php if ($this->contact->mobile && $this->params->get('show_mobile')) : ?>
-	<span class="fa fa-mobile-phone"></span>
-	<span class="contact-mobile" itemprop="telephone">
+    <span class="fa fa-mobile-phone"></span>
+    <span class="contact-mobile" itemprop="telephone">
 			<?php echo $this->contact->mobile; ?>
 		</span>
 
 <?php endif; ?>
 <?php if ($this->contact->webpage && $this->params->get('show_webpage')) : ?>
-	<span class="fa fa-globe"></span>
+    <span class="fa fa-globe"></span>
 
-	<span class="contact-webpage">
+    <span class="contact-webpage">
 			<a href="<?php echo $this->contact->webpage; ?>" target="_blank" rel="noopener noreferrer" itemprop="url">
 			<?php echo JStringPunycode::urlToUTF8($this->contact->webpage); ?></a>
 		</span>

@@ -1,0 +1,32 @@
+/* changing background for Alernate Layout com_content/category/landingpage.php */
+
+.content-section-a {
+  padding: 50px 0;
+  background-color: $gray-100;
+}
+
+.content-section-b {
+  padding: 50px 0;
+  border-top: 1px solid $gray-300;
+  border-bottom: 1px solid $gray-300;
+}
+
+
+/* Max width for the custom-field images in the com_content override */
+
+.tab-pane img {
+  max-width: 100%;
+}
+
+.tab-content {
+  border: 1px solid #ccc;
+  border-top: 0;
+  padding: 10px;
+}
+
+/* item-images */
+
+.item-image {
+  padding: 15px;
+}
+

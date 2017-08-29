@@ -1,0 +1,96 @@
+/*!
+ * Joomla! Bootstrap Template based on Landing Page (http://startbootstrap.com/template-overviews/landing-page)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
+ */
+
+body,
+html {
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand,
+.navbar-nav {
+  font-weight: 700;
+}
+
+.intro-message {
+  h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 5em;
+  }
+
+  h3 {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+  }
+
+}
+
+.site-header {
+  .intro-message {
+    h1 {
+      margin: 0;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+      font-size: 3em;
+    }
+  }
+}
+
+.network-name {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.section-heading-spacer {
+  width: 200px;
+  border-top: 3px solid #e7e7e7;
+}
+
+/* numbered list style */
+
+main ol:not(.carousel-indicators) {
+  list-style: none;
+  counter-reset: mycounter;
+  padding: 0;
+
+  li {
+    position: relative;
+    margin-left: 30px;
+    padding: 5px 0;
+
+    &:before {
+        content: counter(mycounter);
+        counter-increment: mycounter;
+        position: absolute;
+        top: 3px;
+        left: -30px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        border-radius: 50%;
+        color: #fff;
+        background: #4084a6;
+        text-align: center;
+    }
+  }
+}
+
+/* keyboard key styling */
+
+.keyboard {
+  background: #585858;
+  color: #fff;
+  padding: 5px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+

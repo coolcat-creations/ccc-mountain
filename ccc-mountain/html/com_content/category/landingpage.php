@@ -77,27 +77,27 @@ $counter    = 0;
 		<?php if ($this->item->state == 0 || strtotime($this->item->publish_up) > strtotime(JFactory::getDate())
 			|| ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != JFactory::getDbo()->getNullDate())
 		) : ?>
-			<div class="system-unpublished">
+            <div class="system-unpublished">
 		<?php endif; ?>
 
-		<!-- Page Content -->
-		<section
-			class="content-section-<?php echo($counter % 2 ? "a" : "b"); ?> <?php echo $this->item->state == 0 ? ' system-unpublished' : null; ?>"
-			itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <!-- Page Content -->
+        <section
+                class="content-section-<?php echo($counter % 2 ? "a" : "b"); ?> <?php echo $this->item->state == 0 ? ' system-unpublished' : null; ?>"
+                itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
 
-			<div class="container">
+            <div class="container">
 
-				<div class="row">
+                <div class="row">
 					<?php /* If customFields are not filled, content will expand to the full width */ ?>
-					<div
-						class="<?php if ($showExtras || !empty($images->image_intro)) : ?>col-lg-7 <?php echo($counter % 2 ? "" : "push-lg-5") ?>	<?php endif; ?>
+                    <div
+                            class="<?php if ($showExtras || !empty($images->image_intro)) : ?>col-lg-7 <?php echo($counter % 2 ? "" : "push-lg-5") ?>	<?php endif; ?>
 						<?php if (($showExtras == false) && empty($images->image_intro)) : ?>col-lg-12<?php endif; ?>">
-						<hr class="section-heading-spacer">
-						<div class="clearfix"></div>
+                        <hr class="section-heading-spacer float-left">
+                        <div class="clearfix"></div>
 
 						<?php echo JLayoutHelper::render('joomla.content.blog_style_default_item_title', $this->item); ?>
 
-						<div class="lead">
+                        <div class="lead">
 
 							<?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
 								<?php echo JLayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $this->item, 'print' => false)); ?>
@@ -146,89 +146,87 @@ $counter    = 0;
 
 							<?php endif; ?>
 
-						</div>
-					</div>
+                        </div>
+                    </div>
 
 					<?php /* show only if customFields are filled */ ?>
 					<?php if (($showExtras) || !empty($images->image_intro)) : ?>
-						<div class="col-lg-5 <?php echo($counter % 2 ? "" : "pull-lg-7") ?> ">
+                        <div class="col-lg-5 <?php echo($counter % 2 ? "" : "pull-lg-7") ?> ">
 
 							<?php echo JLayoutHelper::render('joomla.content.intro_image', $this->item); ?>
 
 							<?php if ($showExtras) : ?>
 
-								<ul class="nav nav-tabs" role="tablist">
+                                <ul class="nav nav-tabs" role="tablist">
 									<?php $tabCounter = 0;
 									foreach ($this->item->jcfields as $field) :
 										if (!empty($field->value)) : ?>
-											<li class="nav-item">
-												<a class="nav-link <?php echo $tabCounter <= 0 ? 'active' : ''; ?>"
-												   data-toggle="tab"
-												   href="#tab-<?php echo $field->name; ?>-<?php echo $counter; ?>"
-												   role="tab"><?php echo JTEXT::_($field->label); ?>
-												</a>
-											</li>
+                                            <li class="nav-item">
+                                                <a class="nav-link <?php echo $tabCounter <= 0 ? 'active' : ''; ?>"
+                                                   data-toggle="tab"
+                                                   href="#tab-<?php echo $field->name; ?>-<?php echo $counter; ?>"
+                                                   role="tab"><?php echo JTEXT::_($field->label); ?>
+                                                </a>
+                                            </li>
 
 											<?php $tabCounter++;
 										endif;
 									endforeach; ?>
-								</ul>
+                                </ul>
 
 
-								<div class="tab-content">
+                                <div class="tab-content">
 									<?php $contentCounter = 0;
 									foreach ($this->item->jcfields as $field) :
 										if (!empty($field->value)) : ?>
 
-											<div
-												class="tab-pane fade <?php echo $contentCounter <= 0 ? 'show active' : ''; ?>"
-												id="tab-<?php echo $field->name; ?>-<?php echo $counter; ?>"
-												role="tabpanel">
+                                            <div
+                                                    class="tab-pane fade <?php echo $contentCounter <= 0 ? 'show active' : ''; ?>"
+                                                    id="tab-<?php echo $field->name; ?>-<?php echo $counter; ?>"
+                                                    role="tabpanel">
 												<?php echo $field->value; ?>
-											</div>
+                                            </div>
 
 											<?php $contentCounter++;
 										endif;
 									endforeach; ?>
 
-								</div>
+                                </div>
 							<?php endif; ?>
-						</div>
+                        </div>
 					<?php endif; ?>
 					<?php /* CustomField Area End */ ?>
-				</div> <!-- /.row -->
-			</div><!-- /.container -->
-		</section>
+                </div> <!-- /.row -->
+            </div><!-- /.container -->
+        </section>
 
 
 		<?php if ($this->item->state == 0 || strtotime($this->item->publish_up) > strtotime(JFactory::getDate())
 			|| ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != JFactory::getDbo()->getNullDate())
 		) : ?>
-			</div>
+            </div>
 		<?php endif; ?>
 
 		<?php // Content is generated by content plugin event "onContentAfterDisplay" ?>
 		<?php echo $this->item->event->afterDisplayContent; ?>
 
-		<!-- end item -->
+        <!-- end item -->
 		<?php $counter++; ?>
 
 	<?php endforeach; ?>
 
 	<?php if (($this->params->def('show_pagination', 1) == 1 || ($this->params->get('show_pagination') == 2)) && ($this->pagination->get('pages.total') > 1)) : ?>
 		<?php if ($this->params->def('show_pagination_results', 1)) : ?>
-			<div class="container">
-				<div class="row justify-content-center">
+            <div class="container">
+                <div class="row justify-content-center">
 					<?php echo $this->pagination->getPagesCounter(); ?>
-				</div>
-			</div>
+                </div>
+            </div>
 		<?php endif; ?>
 
 
-				<?php echo $this->pagination->getPagesLinks(); ?>
+		<?php echo $this->pagination->getPagesLinks(); ?>
 
 	<?php endif; ?>
 
 <?php endif; ?>
-
-

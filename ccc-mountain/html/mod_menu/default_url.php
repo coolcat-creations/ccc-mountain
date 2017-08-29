@@ -17,12 +17,13 @@ if ($item->anchor_title)
 	$attributes['title'] = $item->anchor_title;
 }
 
-$navitemclass        = $item->anchor_css . ' nav-link';
+$navitemclass = $item->anchor_css . ' nav-link';
 
 if ($item->deeper)
 {
 	$navitemclass .= ' dropdown-toggle';
 }
+
 
 $attributes['class'] = $navitemclass;
 

@@ -1,0 +1,21 @@
+/* Bootstrap Carousel Styling */
+
+span.carousel-control-next-icon, span.carousel-control-prev-icon {
+  background-color: #4084a6;
+  width: 20px;
+  height: 20px;
+  padding: 15px;
+  border-radius: 50%;
+  background-size: 50%;
+  background-position: center;
+}
+
+.carousel-indicators li {
+  background-color: #7cbad9;
+
+}
+
+.carousel-indicators .active {
+  background-color: #4084a6;
+
+}

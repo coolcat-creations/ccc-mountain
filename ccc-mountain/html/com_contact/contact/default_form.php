@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Site
- * @subpackage  com_contact
+ * @subpackage  mod_menu
  *
  * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -9,55 +9,47 @@
 
 defined('_JEXEC') or die;
 
-JHtml::_('behavior.keepalive');
-JHtml::_('behavior.formvalidator');
+$attributes = array();
 
-?>
-<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate">
-	<?php foreach ($this->form->getFieldsets() as $fieldset): ?>
-		<?php if ($fieldset->name === 'captcha' && !$captchaEnabled) : ?>
-			<?php continue; ?>
-		<?php endif; ?>
-		<?php $fields = $this->form->getFieldset($fieldset->name); ?>
-		<?php if (count($fields)) : ?>
-			<fieldset>
-				<?php if (isset($fieldset->label) && strlen($legend = trim(JText::_($fieldset->label)))) : ?>
-					<legend><?php echo $legend; ?></legend>
-				<?php endif; ?>
-				<?php foreach ($fields as $field) :
-					$field->class = 'form-control col-12';
-					if ($field->name == 'jform[spacer]')
-					{
-						$field->class = 'required-fields';
-					}
-					if ($field->name == 'jform[contact_email_copy]')
-					{
-						$field->class = 'form-check-input';
-					}
-					?>
+if ($item->anchor_title)
+{
+	$attributes['title'] = $item->anchor_title;
+}
 
-					<div
-						class="<?php echo ($field->name == 'jform[contact_email_copy]') ? 'form-check' : 'form-group'; ?>">
-						<?php echo $field->input; ?>
+$navitemclass        = $item->anchor_css . ' nav-link';
+if ($item->deeper)
+{
+	$navitemclass .= ' dropdown-toggle';
+}
 
-						<?php if (empty($options['hiddenLabel'])) : ?>
-							<?php echo $field->label; ?>
-						<?php endif; ?>
+$attributes['class'] = $navitemclass;
 
-					</div>
+if ($item->anchor_rel)
+{
+	$attributes['rel'] = $item->anchor_rel;
+}
 
-				<?php endforeach; ?>
-			</fieldset>
-		<?php endif; ?>
-	<?php endforeach; ?>
-	<div class="form-group">
-		<button class="btn btn-primary validate"
-		        type="submit"><?php echo JText::_('COM_CONTACT_CONTACT_SEND'); ?></button>
-		<input type="hidden" name="option" value="com_contact"/>
-		<input type="hidden" name="task" value="contact.submit"/>
-		<input type="hidden" name="return" value="<?php echo $this->return_page; ?>"/>
-		<input type="hidden" name="id" value="<?php echo $this->contact->slug; ?>"/>
-		<?php echo JHtml::_('form.token'); ?>
-	</div>
-</form>
+$linktype = $item->title;
 
+if ($item->menu_image)
+{
+	$linktype = JHtml::_('image', $item->menu_image, $item->title);
+
+	if ($item->params->get('menu_text', 1))
+	{
+		$linktype .= '<span class="image-title">' . $item->title . '</span>';
+	}
+}
+
+if ($item->browserNav == 1)
+{
+	$attributes['target'] = '_blank';
+}
+elseif ($item->browserNav == 2)
+{
+	$options = 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes';
+
+	$attributes['onclick'] = "window.open(this.href, 'targetWindow', '" . $options . "'); return false;";
+}
+
+echo JHtml::_('link', JFilterOutput::ampReplace(htmlspecialchars($item->flink, ENT_COMPAT, 'UTF-8', false)), $linktype, $attributes);
