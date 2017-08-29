@@ -57,7 +57,7 @@ else
 ?>
 
 <!DOCTYPE html>
-<html xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>">
+<html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 
 <head>
     <jdoc:include type="head"/>
