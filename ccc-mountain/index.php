@@ -15,11 +15,11 @@ $params = $app->getTemplate(true)->params;
 
 $javascript = $this->params->get('javascript');
 
-$option   = $app->input->getCmd('option', '');
-$view     = $app->input->getCmd('view', '');
-$layout   = $app->input->getCmd('layout', '');
-$task     = $app->input->getCmd('task', '');
-$itemid   = $app->input->getCmd('Itemid', '');
+$option   = $app->input->getCmd('option');
+$view     = $app->input->getCmd('view');
+$layout   = $app->input->getCmd('layout');
+$task     = $app->input->getCmd('task');
+$itemid   = $app->input->getCmd('Itemid');
 $sitename = $app->get('sitename');
 $year     = JFactory::getDate()->format('Y');
 
