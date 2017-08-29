@@ -97,7 +97,7 @@ echo ($this->direction === 'rtl' ? ' rtl' : '');
 		<?php if ($this->countModules('mainmenu')) : ?>
 
             <div class="collapse navbar-collapse" id="mainNavbar">
-                <jdoc:include type="modules" name="mainmenu" style="none"/>
+                <jdoc:include type="modules" name="mainmenu"/>
             </div>
 
 		<?php endif; ?>
@@ -120,7 +120,7 @@ echo ($this->direction === 'rtl' ? ' rtl' : '');
     <main id="maincontent" class="<?php if ((!$this->countModules('header') && (!$this->countModules('breadcrumbs')))): ?>pt-5<?php endif; ?>">
         <div class="container">
             <div class="row">
-                <div class="<?php if ($this->countModules('right')) : ?>col-md-8<?php endif; ?> <?php if (!$this->countModules('right')) : ?>col-12<?php endif; ?>">
+                <div class="col-<?php echo $this->countModules('right') ? 8 : 12; ?>">
                     <jdoc:include type="message"/>
                     <jdoc:include type="component"/>
                 </div>
@@ -140,14 +140,14 @@ echo ($this->direction === 'rtl' ? ' rtl' : '');
     <div class="container">
 
 		<?php if ($this->countModules('footermenu')) : ?>
-            <jdoc:include type="modules" name="footermenu" style="none"/>
+            <jdoc:include type="modules" name="footermenu"/>
 		<?php endif; ?>
 
 		<?php if (!$this->countModules('copyright')) : ?>
             <p class="copyright text-muted small mt-1 mb-0"> <?php echo $year; ?><?php echo JText::_('TPL_CCC-MOUNTAIN_SITE_COPYRIGHT'); ?> </p>
 		<?php endif; ?>
 		<?php if ($this->countModules('copyright')) : ?>
-            <jdoc:include type="modules" name="copyright" style="none"/>
+            <jdoc:include type="modules" name="copyright"/>
 		<?php endif; ?>
     </div>
 </footer>
