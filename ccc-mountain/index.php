@@ -23,7 +23,7 @@ $itemid   = $app->input->getCmd('Itemid');
 $sitename = $app->get('sitename');
 $year     = JFactory::getDate()->format('Y');
 
-$tplpath = $this->baseurl . 'templates/' . $this->template;
+$tplpath = $this->baseurl . '/templates/' . $this->template;
 
 $this->addStyleSheet($tplpath . '/css/template.css');
 
