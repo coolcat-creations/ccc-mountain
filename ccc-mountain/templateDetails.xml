@@ -21,11 +21,12 @@
 		<filename>favicon.ico</filename>
 		<filename>LICENSE</filename>
 		<folder>css</folder>
+		<folder>fonts</folder>
 		<folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
 		<folder>language</folder>
-		<folder>fonts</folder>
+		<folder>scss</folder>
 	</files>
 
 	<positions>
