@@ -31,7 +31,7 @@ $this->addStyleSheet($tplpath . '/css/font-awesome/font-awesome.min.css');
 $this->addStyleSheet('https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic');
 
 JHtml::_('jquery.framework');
-$this->addScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', '', array('integrity' => '', 'crossorigin' => 'anonymous', 'defer' => 'defer'));
+$this->addScript('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js', '', array('integrity' => '', 'crossorigin' => 'anonymous', 'defer' => 'defer'));
 $this->addScript($tplpath . '/js/bootstrap.min.js', '', array('defer' => 'defer'));
 $this->addScript($tplpath . '/js/custom.js', '', array('defer' => 'defer'));
 unset($this->_scripts[$this->baseurl . '/media/jui/js/jquery-migrate.min.js']);

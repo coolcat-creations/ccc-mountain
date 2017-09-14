@@ -24,16 +24,13 @@ $fullWidth = 1;
 JHtml::_('jquery.framework');
 
 // Add template js
-JHtml::_('script', 'https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', array('version' => 'auto', 'relative' => true));
-JHtml::_('script', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', array('version' => 'auto', 'relative' => true));
+JHtml::_('script', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js', array(), array('integrity' => '', 'crossorigin' => 'anonymous', 'defer' => 'defer'));
+JHtml::_('script', $tplpath . '/js/bootstrap.min.js', array('relative' => true, 'async' => 'async', 'defer' => 'defer'));
+unset($this->_scripts[$this->baseurl . '/media/jui/js/jquery-migrate.min.js']);
 
-
-// Add html5 shiv
-JHtml::_('script', 'jui/html5.js', array('version' => 'auto', 'relative' => true, 'conditional' => 'lt IE 9'));
 
 // Add Stylesheets
-JHtml::_('stylesheet', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', array('version' => 'auto', 'relative' => true));
-JHtml::_('stylesheet', $tplpath . '/css/landing-page.css', array('version' => 'auto', 'relative' => true));
+JHtml::_('stylesheet', $tplpath . '/css/template.css', array('version' => 'auto', 'relative' => true));
 JHtml::_('stylesheet', $tplpath . '/css/font-awesome/font-awesome.min.css', array('version' => 'auto', 'relative' => true));
 JHtml::_('stylesheet', 'https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic', array('version' => 'auto', 'relative' => true));
 JHtml::_('stylesheet', $tplpath . '/css/offline.css', array('version' => 'auto', 'relative' => true));
@@ -71,9 +68,9 @@ else
 <!-- Header -->
 <header class="intro-header" style="background-image:url('<?php echo $tplpath; ?>/images/offline.jpg');">
     <div class="container">
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center my-5">
             <div class="col-lg-6">
-                <div class="intro-message">
+                <div class="intro-message text-center">
 					<?php if ($app->get('display_offline_message', 1) == 1 && str_replace(' ', '', $app->get('offline_message')) != '') : ?>
                         <h1><?php echo $app->get('offline_message'); ?></h1>
 

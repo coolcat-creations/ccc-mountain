@@ -10,6 +10,7 @@ if (!isset($this->error))
 }
 
 $app = JFactory::getApplication();
+
 ?>
 
 <!DOCTYPE html>
@@ -21,18 +22,13 @@ $app = JFactory::getApplication();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Landing Page - Start Bootstrap Theme</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/template.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -134,8 +130,12 @@ $app = JFactory::getApplication();
         src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
         crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+
+
+
 
 </body>
 </html>
