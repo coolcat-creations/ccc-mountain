@@ -10,6 +10,7 @@ if (!isset($this->error))
 }
 
 $app = JFactory::getApplication();
+$tplpath          = JUri::root() . 'templates/' . $this->template;
 
 ?>
 
@@ -24,14 +25,11 @@ $app = JFactory::getApplication();
 
     <title>Landing Page - Start Bootstrap Theme</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
-    <link href="css/template.css" rel="stylesheet">
+    <link href="<?php echo $tplpath; ?>/css/template.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo $tplpath; ?>/css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
           type="text/css">
 
@@ -53,9 +51,9 @@ $app = JFactory::getApplication();
 <!-- Header -->
 <header class="intro-header" style="background-image:url('<?php echo $tplpath; ?>/images/error.jpg');">
     <div class="container">
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center py-5">
             <div class="col-lg-6">
-                <div class="intro-message">
+                <div class="intro-message text-center">
                     <h1><?php echo $this->error->getCode(); ?> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></h1>
                     <hr>
 					<?php if (!empty($logo)) : ?>
