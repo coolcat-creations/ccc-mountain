@@ -58,7 +58,7 @@ function modChrome_header($module, &$params, &$attribs)
         <div class="container">
             <div class="intro-message py-2 py-lg-5">
 				<?php if ($module->showtitle) : ?>
-                <<?php echo $headerTag ?> <?php echo ($headerClass) ? 'class="' . $headerClass : ""; ?>>
+                <<?php echo $headerTag ?> <?php echo ($headerClass) ? 'class="' . $headerClass . '"' : ''; ?>>
 				<?php echo $module->title; ?>
             </<?php echo $headerTag; ?>>
 			<?php endif; ?>
@@ -94,7 +94,7 @@ function modChrome_banner($module, &$params, &$attribs)
 
                 <div class="col-lg-4">
 
-                    <<?php echo $headerTag ?> <?php echo ($headerClass) ? 'class="' . $headerClass : ""; ?>>
+                    <<?php echo $headerTag ?> <?php echo ($headerClass) ? 'class="' . $headerClass . '"' : ''; ?>>
 					<?php echo $module->title; ?>
                 </<?php echo $headerTag; ?>>
 
