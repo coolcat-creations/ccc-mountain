@@ -16,9 +16,9 @@ function modChrome_breadcrumbs($module, &$params, &$attribs)
 	if ($module->content)
 	{
 		?>
-        <div class="container">
-			<?php echo $module->content; ?>
-        </div>
+            <div class="container">
+	            <?php echo $module->content; ?>
+            </div>
 		<?php
 	}
 }
@@ -32,9 +32,9 @@ function modChrome_navigation($module, &$params, &$attribs)
 
 	if (!empty ($module->content)) : ?>
 
-        <<?php echo $moduleTag; ?> class="collapse navbar-collapse <?php echo $moduleclass_sfx; ?>" id="bs-example-navbar-collapse-1">
+		<<?php echo $moduleTag; ?> class="collapse navbar-collapse <?php echo $moduleclass_sfx; ?>" id="bs-example-navbar-collapse-1">
 		<?php echo $module->content; ?>
-        </<?php echo $moduleTag; ?>>
+		</<?php echo $moduleTag; ?>>
 
 	<?php endif;
 }
@@ -54,20 +54,20 @@ function modChrome_header($module, &$params, &$attribs)
 	{
 		?>
 
-        <<?php echo $moduleTag; ?> id="<?php echo $moduleId; ?>" class="<?php echo $moduleclass_sfx; ?>" <?php echo $bgimage; ?>>
-        <div class="container">
-            <div class="intro-message py-2 py-lg-5">
+		<<?php echo $moduleTag; ?> id="<?php echo $moduleId; ?>" class="<?php echo $moduleclass_sfx; ?>" <?php echo $bgimage; ?>>
+		<div class="container">
+			<div class="intro-message py-2 py-lg-5">
 				<?php if ($module->showtitle) : ?>
-                <<?php echo $headerTag ?> <?php echo ($headerClass) ? 'class="' . $headerClass . '"' : ''; ?>>
+				<<?php echo $headerTag ?> <?php echo ($headerClass) ? 'class="' . $headerClass : ""; ?>>
 				<?php echo $module->title; ?>
-            </<?php echo $headerTag; ?>>
+			</<?php echo $headerTag; ?>>
 			<?php endif; ?>
 
-            <hr class="intro-divider">
+			<hr class="intro-divider">
 			<?php echo $module->content; ?>
-        </div>
-        </div>
-        </<?php echo $moduleTag; ?>>
+		</div>
+		</div>
+		</<?php echo $moduleTag; ?>>
 		<?php
 	}
 }
@@ -85,34 +85,41 @@ function modChrome_banner($module, &$params, &$attribs)
 	{
 		?>
 
-        <<?php echo $moduleTag; ?> id="<?php echo $moduleId; ?>" class="<?php echo $moduleclass_sfx; ?>" <?php echo $bgimage; ?>>
+		<<?php echo $moduleTag; ?> id="<?php echo $moduleId; ?>" class="<?php echo $moduleclass_sfx; ?>" <?php echo $bgimage; ?>>
 
-        <div class="container">
+		<div class="container">
 
-            <div class="row">
+			<div class="row">
 				<?php if ($module->showtitle) : ?>
 
-                <div class="col-lg-4">
+				<div class="col-lg-4">
 
-                    <<?php echo $headerTag ?> <?php echo ($headerClass) ? 'class="' . $headerClass . '"' : ''; ?>>
+					<<?php echo $headerTag ?> <?php echo ($headerClass) ? 'class="' . $headerClass : ""; ?>>
 					<?php echo $module->title; ?>
-                </<?php echo $headerTag; ?>>
+				</<?php echo $headerTag; ?>>
 
-            </div>
+			</div>
 			<?php endif; ?>
 
-            <div class="<?php echo($module->showtitle ? "col-lg-8" : "col-lg-12") ?> ">
+			<div class="<?php echo($module->showtitle ? "col-lg-8" : "col-lg-12") ?> ">
 
 				<?php echo $module->content; ?>
 
-            </div>
-        </div>
+			</div>
+		</div>
 
-        </div>
-        <!-- /.container -->
+		</div>
+		<!-- /.container -->
 
-        </<?php echo $moduleTag; ?>>
+		</<?php echo $moduleTag; ?>>
 
 		<?php
 	}
 }
+
+
+
+
+
+
+

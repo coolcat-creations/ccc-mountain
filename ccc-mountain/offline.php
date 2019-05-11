@@ -16,7 +16,6 @@ $app              = JFactory::getApplication();
 $tplpath          = JUri::root() . 'templates/' . $this->template;
 
 // Output as HTML5
-$this->setHtml5(true);
 
 $fullWidth = 1;
 
